@@ -13,5 +13,6 @@
 <a href="redirectToApprovePage">Click to see Approve </a><br><br>
 <a href="redirectToAdminPage">Click to see Admin </a><br><br>
 <a href="redirectToSubmitPage">Click submit </a><br><br>
+<a href="getAll">Click here to get all </a>
 </body>
 </html>

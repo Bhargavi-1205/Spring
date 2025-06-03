@@ -1,9 +1,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored = "false" %>
+
+
 <html>
+<head>
+<title>Passport Page </title>
+</head>
 <body>
-<h2> This is Admin Page</h2>
-<form action="admin" method="post">
+</body>
+<form action="updating" method="post">
 <div>
    <label for="name">Name :</label>
    <input type="text" id="name" name="userName" />
@@ -19,7 +24,7 @@
    <input type="number" id="phno" name="phoneNumber" />
 </div>
 
- <input type ="submit">
-</form>
-</body>
+    <input type ="submit" value="update">
+
+ </form>
 </html>

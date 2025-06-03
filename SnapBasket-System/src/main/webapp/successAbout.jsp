@@ -2,9 +2,7 @@
 <%@ page isELIgnored = "false" %>
 <html>
 <body>
-<h1>Data saved</h1>
-<h3>Name : ${name} </h3>
-<h3> Email : ${email} </h3>
-<h3>PhoneNumber : ${phoneNumber} </h3>
+<h1>Aboutpage created Succesfully</h1>
+<h3> ${msg} </h3>
 </body>
 </html>
