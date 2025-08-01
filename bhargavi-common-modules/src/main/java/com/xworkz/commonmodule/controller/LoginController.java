@@ -1,0 +1,45 @@
+package com.xworkz.commonmodule.controller;
+
+
+import com.xworkz.commonmodule.dto.LoginDto;
+import com.xworkz.commonmodule.dto.RegisterDto;
+import com.xworkz.commonmodule.service.CommonService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Slf4j
+@Controller
+@RequestMapping("login")
+public class LoginController {
+
+
+       @Autowired
+    CommonService service;
+
+       @GetMapping
+        public String redirectToLogin() {
+            log.info("Invoking redirectToLogin");
+            return "login";
+        }
+
+        @PostMapping
+        public String loginMethod(LoginDto loginDto, Model model) {
+            log.info("Invoking loginMethod {}", loginDto);
+            boolean isLogin = service.getRegisterByEmailId(loginDto);
+            if (isLogin) {
+                RegisterDto registerDto = service.getRegisterByEmailId(loginDto.getEmail());
+                model.addAttribute("register" , registerDto);
+                return "profile";
+            }
+            model.addAttribute("msg", "Login Failed ");
+            return "success";
+        }
+
+
+    }
+
